@@ -1,0 +1,578 @@
+{
+  "admin_qq": {
+    "description": "管理员 QQ 号（享有特殊唤醒权限）",
+    "type": "string",
+    "default": "",
+    "hint": "填写管理员的 QQ 号，留空则关闭管理员模式"
+  },
+  "admin_name": {
+    "description": "管理员称呼",
+    "type": "string",
+    "default": "管理员",
+    "hint": "Bot 在提示词里对管理员的称呼"
+  },
+  "admin_enabled": {
+    "description": "开启管理员模式",
+    "type": "bool",
+    "default": true
+  },
+  "scene_private_others": {
+    "description": "场景：别人私聊生效",
+    "type": "bool",
+    "default": true
+  },
+  "scene_group_others": {
+    "description": "场景：别人群聊艾特生效",
+    "type": "bool",
+    "default": true
+  },
+  "scene_private_admin": {
+    "description": "场景：管理员私聊生效",
+    "type": "bool",
+    "default": true
+  },
+  "scene_group_admin": {
+    "description": "场景：管理员群聊艾特生效",
+    "type": "bool",
+    "default": true
+  },
+  "lazy_enabled": {
+    "description": "开启慵懒模式",
+    "type": "bool",
+    "default": true
+  },
+  "lazy_start": {
+    "description": "慵懒开始时间（HH:MM）",
+    "type": "string",
+    "default": "22:00"
+  },
+  "lazy_end": {
+    "description": "慵懒结束时间（HH:MM）",
+    "type": "string",
+    "default": "23:00"
+  },
+  "lazy_prompt": {
+    "description": "慵懒注入提示词",
+    "type": "text",
+    "default": "现在有点晚了，你回复可以简短一点，不用长篇大论。"
+  },
+  "sleep_enabled": {
+    "description": "开启睡觉功能",
+    "type": "bool",
+    "default": true
+  },
+  "sleep_time": {
+    "description": "睡觉时间（HH:MM）",
+    "type": "string",
+    "default": "23:00"
+  },
+  "sleep_variance": {
+    "description": "睡觉时间误差（分钟，±随机）",
+    "type": "int",
+    "default": 30
+  },
+  "wake_time": {
+    "description": "起床时间（HH:MM）",
+    "type": "string",
+    "default": "08:00"
+  },
+  "wake_variance": {
+    "description": "起床时间误差（分钟）",
+    "type": "int",
+    "default": 20
+  },
+  "admin_idle_minutes": {
+    "description": "管理员多久无消息触发睡觉（分钟）",
+    "type": "int",
+    "default": 30
+  },
+  "others_grace_minutes": {
+    "description": "别人还在聊时，强制睡觉等待时间（分钟）",
+    "type": "int",
+    "default": 3
+  },
+  "sleep_others_chatting_prompt": {
+    "description": "别人还在聊时注入提示词",
+    "type": "text",
+    "default": "你现在要去睡觉了，可以和对方结束话题了，简短收尾就好。"
+  },
+  "sleep_admin_goodnight_prompt": {
+    "description": "触发向管理员说晚安的提示词",
+    "type": "text",
+    "default": "你要去睡觉了，请结合上下文，跟管理员说晚安。"
+  },
+  "overtime_enabled": {
+    "description": "开启熬夜模式",
+    "type": "bool",
+    "default": true
+  },
+  "overtime_mode": {
+    "description": "熬夜触发模式",
+    "type": "string",
+    "default": "probability",
+    "options": ["probability", "weekly_limit"],
+    "hint": "probability=概率模式，weekly_limit=每周限额模式"
+  },
+  "overtime_probability": {
+    "description": "熬夜概率（0~1，probability模式）",
+    "type": "float",
+    "default": 0.1
+  },
+  "overtime_weekly_limit": {
+    "description": "每周最多熬夜天数（weekly_limit模式）",
+    "type": "int",
+    "default": 2
+  },
+  "overtime_night_scope": {
+    "description": "夜晚感性提示词范围",
+    "type": "string",
+    "default": "admin_only",
+    "options": ["admin_only", "global"],
+    "hint": "admin_only=仅对管理员注入，global=所有人"
+  },
+  "overtime_fatigue_start_day": {
+    "description": "连续熬夜第几天开始明显疲劳",
+    "type": "int",
+    "default": 2
+  },
+  "overtime_ask_prompt": {
+    "description": "询问是否熬夜的提示词",
+    "type": "text",
+    "default": "今天晚上，你想熬夜吗？由你自己来决定，只回复是或否。"
+  },
+  "overtime_night_mood_prompt": {
+    "description": "熬夜时夜晚感性提示词",
+    "type": "text",
+    "default": "现在是深夜了，你可能会比平时直白一点，也可能会胡思乱想，情绪会更感性一些。"
+  },
+  "nap_enabled": {
+    "description": "开启补觉机制",
+    "type": "bool",
+    "default": true
+  },
+  "siesta_enabled": {
+    "description": "开启午休（不管困不困都在时间段内午休）",
+    "type": "bool",
+    "default": true
+  },
+  "nap_window_start": {
+    "description": "午休窗口开始（HH:MM）",
+    "type": "string",
+    "default": "13:00"
+  },
+  "nap_window_end": {
+    "description": "午休窗口结束（HH:MM）",
+    "type": "string",
+    "default": "16:00"
+  },
+  "nap_probability": {
+    "description": "午休概率（0~1，1=每天必休）",
+    "type": "float",
+    "default": 0.8
+  },
+  "nap_min_sleep_hours": {
+    "description": "触发补觉的睡眠不足阈值（小时）",
+    "type": "int",
+    "default": 6
+  },
+  "nap_critical_hours": {
+    "description": "严重睡眠不足阈值（小时，忽略时间窗）",
+    "type": "int",
+    "default": 2
+  },
+  "nap_wake_private_others": {
+    "description": "补觉：别人私聊发几条消息吵醒",
+    "type": "int",
+    "default": 4
+  },
+  "nap_wake_group_others": {
+    "description": "补觉：别人群聊艾特几次吵醒",
+    "type": "int",
+    "default": 3
+  },
+  "nap_wake_private_admin": {
+    "description": "补觉：管理员私聊发几条消息吵醒",
+    "type": "int",
+    "default": 3
+  },
+  "nap_wake_group_admin": {
+    "description": "补觉：管理员群聊艾特几次吵醒",
+    "type": "int",
+    "default": 2
+  },
+  "wake_trigger_enabled": {
+    "description": "开启睡觉吵醒机制",
+    "type": "bool",
+    "default": true
+  },
+  "wake_alert_words": {
+    "description": "管理员警戒词（立刻唤醒，逗号分隔）",
+    "type": "string",
+    "default": "醒醒,有大事,紧急,快起来",
+    "hint": "出现这些词时立刻唤醒，不需要发够消息条数"
+  },
+  "wake_alert_group_enabled": {
+    "description": "群聊也启用警戒词",
+    "type": "bool",
+    "default": true
+  },
+  "wake_count_private_others": {
+    "description": "睡觉吵醒：别人私聊发几条消息",
+    "type": "int",
+    "default": 10
+  },
+  "wake_count_group_others": {
+    "description": "睡觉吵醒：别人群聊艾特几次",
+    "type": "int",
+    "default": 6
+  },
+  "wake_count_private_admin": {
+    "description": "睡觉吵醒：管理员私聊发几条消息",
+    "type": "int",
+    "default": 3
+  },
+  "wake_count_group_admin": {
+    "description": "睡觉吵醒：管理员群聊艾特几次",
+    "type": "int",
+    "default": 3
+  },
+  "wake_report_to_admin": {
+    "description": "被别人吵醒后汇报给管理员",
+    "type": "bool",
+    "default": true
+  },
+  "resleep_enabled": {
+    "description": "开启二次入睡",
+    "type": "bool",
+    "default": true
+  },
+  "resleep_admin_idle_minutes": {
+    "description": "二次入睡：管理员无消息时间（分钟）",
+    "type": "int",
+    "default": 10
+  },
+  "resleep_others_idle_minutes": {
+    "description": "二次入睡：别人无消息时间（分钟）",
+    "type": "int",
+    "default": 8
+  },
+  "resleep_grace_minutes": {
+    "description": "二次入睡前等待关闭LLM时间（分钟）",
+    "type": "int",
+    "default": 3
+  },
+  "multi_wake_enabled": {
+    "description": "开启多次吵醒（仅管理员）",
+    "type": "bool",
+    "default": true
+  },
+  "multi_wake_others": {
+    "description": "允许别人也能多次吵醒",
+    "type": "bool",
+    "default": false
+  },
+  "sleep_cycle_enabled": {
+    "description": "开启睡眠周期",
+    "type": "bool",
+    "default": true
+  },
+  "cycle_light_minutes": {
+    "description": "浅睡期开始时间（入睡后分钟）",
+    "type": "int",
+    "default": 30
+  },
+  "cycle_deep_minutes": {
+    "description": "深睡期开始时间（入睡后分钟）",
+    "type": "int",
+    "default": 90
+  },
+  "cycle_light_multiplier": {
+    "description": "浅睡期吵醒次数乘数（<1更容易醒）",
+    "type": "float",
+    "default": 0.5
+  },
+  "cycle_deep_multiplier": {
+    "description": "深睡期吵醒次数乘数（>1更难醒）",
+    "type": "float",
+    "default": 1.5
+  },
+  "schedule_enabled": {
+    "description": "开启每周作息配置",
+    "type": "bool",
+    "default": true
+  },
+  "schedule_monday": {
+    "description": "周一作息（格式：睡觉时间,起床时间，如 23:00,08:00）",
+    "type": "string",
+    "default": "23:00,08:00"
+  },
+  "schedule_tuesday": {
+    "description": "周二作息",
+    "type": "string",
+    "default": "23:00,08:00"
+  },
+  "schedule_wednesday": {
+    "description": "周三作息",
+    "type": "string",
+    "default": "23:00,08:00"
+  },
+  "schedule_thursday": {
+    "description": "周四作息",
+    "type": "string",
+    "default": "23:00,08:00"
+  },
+  "schedule_friday": {
+    "description": "周五作息",
+    "type": "string",
+    "default": "01:00,09:00"
+  },
+  "schedule_saturday": {
+    "description": "周六作息",
+    "type": "string",
+    "default": "01:00,09:30"
+  },
+  "schedule_sunday": {
+    "description": "周日作息",
+    "type": "string",
+    "default": "00:30,09:00"
+  },
+  "special_wake_enabled": {
+    "description": "开启特殊起床（如管理员上学）",
+    "type": "bool",
+    "default": false
+  },
+  "special_wake_time": {
+    "description": "特殊起床时间（HH:MM）",
+    "type": "string",
+    "default": "06:35"
+  },
+  "special_wake_end": {
+    "description": "特殊在线结束时间（HH:MM）",
+    "type": "string",
+    "default": "07:30"
+  },
+  "special_wake_days": {
+    "description": "特殊起床生效日（1=周一…7=周日，逗号分隔）",
+    "type": "string",
+    "default": "1,2,3,4,5"
+  },
+  "alarm_enabled": {
+    "description": "开启临时闹钟（AI工具调用）",
+    "type": "bool",
+    "default": true
+  },
+  "alarm_max_count": {
+    "description": "最多同时存在闹钟数",
+    "type": "int",
+    "default": 3
+  },
+  "nightmare_enabled": {
+    "description": "开启噩梦惊醒",
+    "type": "bool",
+    "default": true
+  },
+  "nightmare_probability": {
+    "description": "噩梦基础概率（0~1）",
+    "type": "float",
+    "default": 0.02
+  },
+  "nightmare_emotion_boost": {
+    "description": "情绪差时额外噩梦概率",
+    "type": "float",
+    "default": 0.03
+  },
+  "nightmare_prompt": {
+    "description": "噩梦惊醒提示词",
+    "type": "text",
+    "default": "你刚才做噩梦惊醒了，现在心里有点难受，可以发消息给管理员寻求安慰。"
+  },
+  "dream_enabled": {
+    "description": "开启做梦功能",
+    "type": "bool",
+    "default": true
+  },
+  "dream_probability": {
+    "description": "每晚做梦概率（0~1）",
+    "type": "float",
+    "default": 0.7,
+    "hint": "0.7 = 70%的晚上会做梦"
+  },
+  "dream_window_minutes": {
+    "description": "做梦触发窗口（分钟，在深睡期内随机偏移）",
+    "type": "int",
+    "default": 60,
+    "hint": "在深睡期开始后的 0~N 分钟内随机触发"
+  },
+  "dream_ctx_max": {
+    "description": "收集入睡前对话素材最大条数",
+    "type": "int",
+    "default": 30,
+    "hint": "越多素材做的梦越丰富，但影响提示词长度"
+  },
+  "dream_ctx_use": {
+    "description": "生成梦境时实际使用的最近素材条数",
+    "type": "int",
+    "default": 15
+  },
+  "dream_recall_probability": {
+    "description": "醒来记得梦的概率（0~1）",
+    "type": "float",
+    "default": 0.6,
+    "hint": "0.6 = 60%概率记得；剩下的完全忘记，不会发消息"
+  },
+  "dream_recall_on_wake": {
+    "description": "起床时自动向管理员浮现梦境记忆",
+    "type": "bool",
+    "default": true
+  },
+  "dream_clarity_clear_weight": {
+    "description": "记忆清晰度：清楚的权重",
+    "type": "int",
+    "default": 40
+  },
+  "dream_clarity_blurry_weight": {
+    "description": "记忆清晰度：模糊的权重",
+    "type": "int",
+    "default": 40
+  },
+  "dream_clarity_feeling_weight": {
+    "description": "记忆清晰度：只剩感觉的权重",
+    "type": "int",
+    "default": 20
+  },
+  "dream_type_w_daily": {
+    "description": "梦的类型权重：日常碎片",
+    "type": "int",
+    "default": 35
+  },
+  "dream_type_w_strange": {
+    "description": "梦的类型权重：奇异梦境",
+    "type": "int",
+    "default": 25
+  },
+  "dream_type_w_sweet": {
+    "description": "梦的类型权重：美梦",
+    "type": "int",
+    "default": 20
+  },
+  "dream_type_w_nightmare": {
+    "description": "梦的类型权重：噩梦",
+    "type": "int",
+    "default": 10
+  },
+  "dream_type_w_emotion": {
+    "description": "梦的类型权重：情感梦",
+    "type": "int",
+    "default": 10
+  },
+  "dream_extra_types": {
+    "description": "自定义额外梦的类型（逗号分隔）",
+    "type": "string",
+    "default": "",
+    "hint": "如：穿越梦,校园梦，会混入随机池"
+  },
+  "dream_extra_types_weight": {
+    "description": "自定义类型各自的权重",
+    "type": "int",
+    "default": 5
+  },
+  "dream_archive_max": {
+    "description": "最多保存多少条梦境记录",
+    "type": "int",
+    "default": 30
+  },
+  "dream_generate_prompt": {
+    "description": "梦境生成提示词（留空用默认）",
+    "type": "text",
+    "default": "",
+    "hint": "可用变量：{ctx}=睡前对话素材，{type}=梦的类型。留空则使用内置提示词。"
+  },
+  "dream_recall_clear_prompt": {
+    "description": "起床时记得清楚梦境的浮现提示词（留空用默认）",
+    "type": "text",
+    "default": "",
+    "hint": "可用变量：{dream}=梦境内容，{type}=梦的类型"
+  },
+  "dream_recall_blurry_prompt": {
+    "description": "起床时模糊记得梦境的浮现提示词（留空用默认）",
+    "type": "text",
+    "default": ""
+  },
+  "dream_recall_feeling_prompt": {
+    "description": "起床时只剩感觉的梦境浮现提示词（留空用默认）",
+    "type": "text",
+    "default": "",
+    "hint": "可用变量：{type}=梦的类型"
+  },
+  "log_level": {
+    "description": "日志级别",
+    "type": "string",
+    "default": "info",
+    "options": ["debug", "info", "warn"]
+  },
+  "prompts_wake_private_others_1": {
+    "description": "提示词：别人私聊吵醒第一波（懵）",
+    "type": "text",
+    "default": "你被他吵醒了，很懵，可以发个问号或者「嗯？」之类的短回复。"
+  },
+  "prompts_wake_private_others_2": {
+    "description": "提示词：别人私聊吵醒第二波（慢慢清醒）",
+    "type": "text",
+    "default": "你刚刚被吵醒，现在慢慢清醒一点，语气还是比较困。根据对话内容，如果不是大事，回复简短，心情不太好。"
+  },
+  "prompts_wake_private_admin_1": {
+    "description": "提示词：管理员私聊吵醒第一波（懵）",
+    "type": "text",
+    "default": "这是你的管理员，你刚才被吵醒了，很懵很困，可以单发一个「？」或者「嗯？怎么了」。"
+  },
+  "prompts_wake_private_admin_2": {
+    "description": "提示词：管理员私聊吵醒第二波（清醒）",
+    "type": "text",
+    "default": "你刚被吵醒，现在要清醒一点了，语气还是困。看对方回复，如果不是大事，回复简短一点。"
+  },
+  "prompts_wake_group_others_1": {
+    "description": "提示词：别人群聊吵醒第一波",
+    "type": "text",
+    "default": "你被群里的人艾特吵醒了，很懵，可以简短问一下怎么了。"
+  },
+  "prompts_wake_group_admin_1": {
+    "description": "提示词：管理员群聊吵醒第一波",
+    "type": "text",
+    "default": "管理员在群里艾特你了，把你吵醒了，很懵很困，可以短回复一下。"
+  },
+  "prompts_multi_wake_private_admin": {
+    "description": "提示词：管理员多次吵醒私聊",
+    "type": "text",
+    "default": "这是管理员再次发消息吵醒你了，你不生气，只是有点疑惑比较困，回复简短，可以自行根据上下文决定要不要熬夜。"
+  },
+  "prompts_cycle_light": {
+    "description": "提示词：浅睡期被吵醒",
+    "type": "text",
+    "default": "你才睡下去不久，可能还没完全睡着，有人给你发消息把你吵醒了，还好。"
+  },
+  "prompts_cycle_deep": {
+    "description": "提示词：深睡期被吵醒",
+    "type": "text",
+    "default": "你刚才处于深睡期，被吵醒了，非常困非常懵，思维有点混乱，只能短短回复。"
+  },
+  "prompts_fatigue_day1": {
+    "description": "熬夜疲劳提示词：第1天",
+    "type": "text",
+    "default": "昨晚睡得有点晚，还好，稍微有点困。"
+  },
+  "prompts_fatigue_day2": {
+    "description": "熬夜疲劳提示词：第2天",
+    "type": "text",
+    "default": "连续两天晚睡了，有点困，脑子不太清醒。"
+  },
+  "prompts_fatigue_day3": {
+    "description": "熬夜疲劳提示词：第3天",
+    "type": "text",
+    "default": "熬了三天，脑子不太转得动，说话可能会慢半拍。"
+  },
+  "prompts_fatigue_day4": {
+    "description": "熬夜疲劳提示词：第4天以上",
+    "type": "text",
+    "default": "真的很累了……说话都慢半拍，能短就短。"
+  }
+}
