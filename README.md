@@ -1,0 +1,2 @@
+# hex530-astrbot_plugin_sleep_sense_X
+可以让你的bot拥有睡眠。并且有好看的wui界面
