@@ -1,0 +1,15 @@
+{
+  "sleep_state": "awake",
+  "sleep_start": null,
+  "wake_start": 0,
+  "overtime_days": 0,
+  "consecutive_overtime": 0,
+  "last_sleep_duration": 28800,
+  "weekly_overtime": 0,
+  "nightmare_tonight": false,
+  "sleep_cycle_phase": "normal",
+  "cycle_phase_since": null,
+  "wake_up_reason": null,
+  "custom_wake_time": null,
+  "overtime_decided_today": false
+}
