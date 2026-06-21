@@ -1,1 +1,8 @@
-{\n  \"name\": \"astrbot_plugin_sleep_sense\",\n  \"desc\": \"让 Bot 拥有真实睡眠感知：睡觉、慵懒、熬夜、补觉、吵醒、睡眠周期等\",\n  \"version\": \"1.0.0\",\n  \"author\": \"夕小柠\",\n  \"repo\": \"\",\n  \"homepage\": \"\"\n}
+{
+  "name": "astrbot_plugin_sleep_sense",
+  "desc": "让 Bot 拥有真实睡眠感知：睡觉、慵懒、熬夜、补觉、吵醒、睡眠周期等",
+  "version": "1.0.0",
+  "author": "夕小柠",
+  "repo": "",
+  "homepage": ""
+}
